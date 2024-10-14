@@ -1,7 +1,6 @@
-name: "수동으로 작동시키기"
+name: "푸시로 작동시키기"
 
-on:
-  workflow_dispatch:
+on: [push]
 
 permissions:
   contents: write
@@ -21,6 +20,6 @@ jobs:
             github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: '수동 작성',
-              body: '수동으로 작성하였습니다'
+              title: 'Push 작성',
+              body: 'Push로 작성하였습니다'
             })
